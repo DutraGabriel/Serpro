@@ -17,7 +17,7 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.8;
   padding: 20px;
 }
@@ -64,30 +64,4 @@ section:hover {
 h2 {
   font-size: 24px;
   color: var(--primary-color);
-  margin-bottom: 12px;
-}
-
-p {
-  margin-bottom: 12px;
-  color: var(--text-color);
-}
-
-ul {
-  padding-left: 20px;
-  margin-top: 10px;
-}
-
-li {
-  margin-bottom: 8px;
-  color: var(--text-color);
-}
-
-a {
-  color: var(--primary-light);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-a:hover {
-  text-decoration: underline;
-}
+  margin-bottom: 12p
