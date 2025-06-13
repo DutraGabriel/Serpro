@@ -36,7 +36,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Background Animation */
     body::before {
       content: '';
       position: fixed;
@@ -57,8 +56,7 @@
       0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
       50% { opacity: 0.8; transform: scale(1.1) rotate(2deg); }
     }
-
-    /* Header */
+    
     header {
       position: relative;
       min-height: 100vh;
@@ -132,7 +130,6 @@
       60% { transform: translateX(-50%) translateY(-5px); }
     }
 
-    /* Navigation */
     .nav-dots {
       position: fixed;
       right: 2rem;
@@ -164,7 +161,6 @@
       transform: scale(1.2);
     }
 
-    /* Main Content */
     main {
       max-width: 1200px;
       margin: 0 auto;
@@ -239,7 +235,6 @@
       font-weight: 600;
     }
 
-    /* Lists */
     .custom-list {
       list-style: none;
       padding: 0;
@@ -274,7 +269,6 @@
       transform: scale(1.2);
     }
 
-    /* Stats Section */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -314,7 +308,6 @@
       letter-spacing: 1px;
     }
 
-    /* Footer */
     footer {
       background: rgba(0, 0, 0, 0.3);
       padding: 3rem 2rem;
@@ -354,7 +347,6 @@
       .hero-subtitle { font-size: 1.2rem; }
     }
 
-    /* Loading Animation */
     .loading {
       position: fixed;
       top: 0;
@@ -557,14 +549,13 @@
   </footer>
 
   <script>
-    // Loading Screen
+    
     window.addEventListener('load', () => {
       setTimeout(() => {
         document.getElementById('loading').classList.add('hidden');
       }, 1000);
     });
-
-    // Smooth Scrolling and Section Animation
+    
     const sections = document.querySelectorAll('.section');
     const navDots = document.querySelectorAll('.nav-dot');
 
@@ -578,7 +569,6 @@
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           
-          // Update navigation dots
           const sectionIndex = Array.from(sections).indexOf(entry.target);
           navDots.forEach((dot, index) => {
             dot.classList.toggle('active', index === sectionIndex + 1);
@@ -591,7 +581,6 @@
       observer.observe(section);
     });
 
-    // Navigation Dots Click Handler
     navDots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         if (index === 0) {
@@ -602,7 +591,6 @@
       });
     });
 
-    // Header Navigation
     const heroObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         navDots[0].classList.toggle('active', entry.isIntersecting);
@@ -611,7 +599,6 @@
 
     heroObserver.observe(document.getElementById('hero'));
 
-    // Parallax Effect for Background
     let ticking = false;
 
     function updateParallax() {
@@ -635,7 +622,6 @@
 
     window.addEventListener('scroll', requestTick);
 
-    // Typewriter Effect for Hero Title (Optional Enhancement)
     const heroTitle = document.querySelector('.hero-title');
     const titleText = heroTitle.textContent;
     
@@ -653,14 +639,12 @@
       }, 150);
     }
 
-    // Start typewriter effect after loading
     setTimeout(typewriterEffect, 1500);
 
-    // Add click effects to cards
     const cards = document.querySelectorAll('.section-card');
     cards.forEach(card => {
       card.addEventListener('click', (e) => {
-        // Create ripple effect
+        
         const ripple = document.createElement('div');
         const rect = card.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
@@ -689,7 +673,6 @@
       });
     });
 
-    // Add ripple animation
     const style = document.createElement('style');
     style.textContent = `
       @keyframes ripple {
@@ -700,14 +683,13 @@
       }
     `;
     document.head.appendChild(style);
-
-    // Performance optimization: Throttle scroll events
+    
     let scrollTimeout;
     window.addEventListener('scroll', () => {
       if (!scrollTimeout) {
         scrollTimeout = setTimeout(() => {
           scrollTimeout = null;
-          // Additional scroll-based animations can go here
+          
         }, 16); // ~60fps
       }
     });
