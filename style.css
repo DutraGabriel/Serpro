@@ -1,0 +1,56 @@
+body {
+  background-color: #121212;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+header {
+  padding: 40px 0;
+  text-align: center;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+header h1 {
+  color: #ffa500;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.autor {
+  color: #ccc;
+  font-size: 14px;
+}
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #00aaff;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+p, li {
+  color: #e0e0e0;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+a {
+  color: #33bbff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
